@@ -1,9 +1,8 @@
-﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace juegoIA
+namespace TPF_Lopez
 {
 	public class ComputerPlayer: Jugador
 	{
@@ -24,12 +23,19 @@ namespace juegoIA
 				ArbolGeneral<int> nodo = new ArbolGeneral<int>(carta);
 				//crear arbol de victorias de la IA
 			}
+
 		}
 		
 		
 		public override int descartarUnaCarta()
 		{
-			//Implementar
+			List<int> monticulo = 0;
+			// si usuario descarto una carta, el valor de esa carta se suma al monticulo, lo mismo para la IA. 
+			// Quito del camino a usar esa carta en ese momento, ver diagrama
+
+			if (monticulo > limite)
+				//Si el límite lo superó la IA
+				//¿A quién? .printWinner();
 			return 0;
 		}
 		
