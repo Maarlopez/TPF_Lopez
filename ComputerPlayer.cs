@@ -14,7 +14,16 @@ namespace juegoIA
 		
 		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
-			//Implementar
+			List<int> IA = cartasPropias;
+			List<int> humano = cartasOponente;
+
+			//jugará primero el humano. Para guía mirar el gráfico del informe
+
+			foreach(var carta in humano)
+			{
+				ArbolGeneral<int> nodo = new ArbolGeneral<int>(carta);
+				//crear arbol de victorias de la IA
+			}
 		}
 		
 		
