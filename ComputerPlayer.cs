@@ -6,7 +6,7 @@ using TrabajoFinal_Cartas;
 
 namespace TPF_Lopez
 {
-	public class ComputerPlayer : Jugador, NodoGeneral, ArbolGeneral, NCarta
+	public class ComputerPlayer : Jugador, NodoGeneral, ArbolGeneral, NCarta //"El uso de tipo de tipo genérico ArbolGeneral<T> requiere argumentos de tipo 1
 	{
 		private List<int> cartas = new List<int>();
 		private List<int> cartasHumano = new List<int>();
