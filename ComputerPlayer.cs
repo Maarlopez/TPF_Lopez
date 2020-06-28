@@ -1,49 +1,37 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using TrabajoFinal_Cartas;
 
 namespace TPF_Lopez
 {
-	public class ComputerPlayer: Jugador
+	public class ComputerPlayer : Jugador, NodoGeneral, ArbolGeneral, NCarta
 	{
-		
+		private List<int> cartas = new List<int>();
+		private List<int> cartasHumano = new List<int>();
+		private int limite;
+		private ArbolGeneral<NCarta> Victorias = new ArbolGeneral<NCarta>(new NCarta());
+		//Impar es el humano. Par es la IA
 		public ComputerPlayer()
 		{
 		}
-		
-		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
+		public override void incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
-			List<int> IA = cartasPropias;
-			List<int> humano = cartasOponente;
+			this.limite = limite;
+			Console.Write("El límite actual es:", limite); //imprimo en pantalla el límite inicial.
+
+			AgregarNodo(cartasPropias, true);
+			AgregarNodo(cartasOponente, false);
+
+			//IMPREMENTAR UN MENÚ, QUE EL USUARIO ELIJA SI ES POR NIVELES O INORDEN
+
 
 			//jugará primero el humano. Para guía mirar el gráfico del informe
 
-			foreach(var carta in humano)
-			{
-				ArbolGeneral<int> nodo = new ArbolGeneral<int>(carta);
-				//crear arbol de victorias de la IA
-			}
+			//Dado un conjunto de jugadas imprimir todos los posibles resultados.
+			//Dada una profundidad imprimir las jugadas a dicha profundidad.
 
-		}
-		
-		
-		public override int descartarUnaCarta()
-		{
-			List<int> monticulo = 0;
-			// si usuario descarto una carta, el valor de esa carta se suma al monticulo, lo mismo para la IA. 
-			// Quito del camino a usar esa carta en ese momento, ver diagrama
-
-			if (monticulo > limite)
-				//Si el límite lo superó la IA
-				//¿A quién? .printWinner();
-			return 0;
-		}
-		
-		public override void cartaDelOponente(int carta)
-		{
-			//implementar
+			/*int[] dato = new int[2];
+			ArbolGeneral<int []> raiz = new ArbolGeneral<int[]>(dato);*/
 			
-		}
-		
-	}
-}
