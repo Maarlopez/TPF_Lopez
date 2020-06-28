@@ -6,7 +6,7 @@ using TrabajoFinal_Cartas;
 
 namespace TPF_Lopez
 {
-	public class ComputerPlayer : Jugador, NodoGeneral, ArbolGeneral, NCarta //"El uso de tipo de tipo genérico ArbolGeneral<T> requiere argumentos de tipo 1
+	public class ComputerPlayer : Jugador, NodoGeneral, ArbolGeneral, NCarta
 	{
 		private List<int> cartas = new List<int>();
 		private List<int> cartasHumano = new List<int>();
@@ -35,3 +35,102 @@ namespace TPF_Lopez
 			/*int[] dato = new int[2];
 			ArbolGeneral<int []> raiz = new ArbolGeneral<int[]>(dato);*/
 			
+
+			ArmoArbol((Victorias, AgregarNodo(cartasPropias, true), AgregarNodo(cartasOponente, false), limite);
+			private List<NCarta> AgregarNodo(List<int> listaCartas, bool flag)
+            {
+				List<NCarta> listaNodos = new List<NCarta>();
+				foreach(int carta in listaCartas)
+                {
+					NCarta nodoCarta = new NCarta(carta, flag);
+					listaNodos.Add(nodoCarta);
+                }
+				return listaNodos;
+            }
+
+			int op;
+			do
+			{ /* Implemento un Do While para que el menú se ejecute al menos una vez */
+				Console.Clear();
+				Console.WriteLine("¿Desea utilizar un algoritmo por niveles o inorden?\n"); /* Muestro el menú */
+
+				Console.WriteLine("1) Por niveles");
+				Console.WriteLine("2) Inorden");
+				Console.WriteLine("3) Salir");
+
+				op = int.Parse(Console.ReadLine()); /* Parseo el dato ingresado por el usuario para pasarlo 
+				de string a entero */
+
+				switch (op)
+				{ /* Inicializo el menu con un switch */
+
+					case 1:
+						PorNiveles(); //llamo al método de esta misma clase
+						break;
+					case 2:
+						Inorden();
+						break;
+					case 3:
+						break;
+					default:
+						Console.WriteLine("Opcion incorrecta"); /* Agrego una opción más en caso de que se ingrese
+						un numero fuera de rango */
+						break;
+				}
+
+			} while (op != 3);
+		}
+        public override int descartarUnaCarta()
+		{
+			
+			
+			
+			/*for(var hi in this.root.getHijos())
+            		{
+				if(hi.carta == carta)
+                		{	
+					this.root = hi;
+					break;
+                		}
+
+            		}*/
+			return 0;
+		}
+		
+		public override void cartaDelOponente(int carta)
+		{
+			foreach(ArbolGeneral<NCarta> naipe in Victorias.getHijos())
+           		{
+				if(naipe.getDatoRaiz().GetCarta() == carta)
+                		{
+					Victorias = naipe;
+					break;
+                		}
+            		}
+		}
+
+		public void PorNiveles()
+		{
+			Cola<ArbolGeneral<T>> cola = new Cola<ArbolGeneral<T>>();
+			cola.encolar(this);
+
+			while (!cola.esVacia())
+			{
+				ArbolGeneral<T> subarbol = cola.desencolar;
+				Console.Write(subarbol.getDatoRaiz() + " desencolado.");
+				if (subarbol.getHijos() != null)
+				{
+					foreach (var hijo in subarbol.getHijos())
+					{
+						cola.ensolar(hijo);
+					}
+				}
+			}
+		}
+
+		public void Inorden() { }
+
+	
+
+	}
+}
