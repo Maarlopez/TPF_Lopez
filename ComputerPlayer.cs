@@ -80,22 +80,15 @@ namespace TPF_Lopez
 
 			} while (op != 3);
 		}
+		
+		
+		
         public override int descartarUnaCarta()
 		{
-			
-			
-			
-			/*for(var hi in this.root.getHijos())
-            		{
-				if(hi.carta == carta)
-                		{	
-					this.root = hi;
-					break;
-                		}
-
-            		}*/
 			return 0;
 		}
+		
+		
 		
 		public override void cartaDelOponente(int carta)
 		{
