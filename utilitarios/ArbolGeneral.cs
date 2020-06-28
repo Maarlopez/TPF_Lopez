@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using TrabajoFinal_Cartas;
 
-namespace TrabajoFinal_Cartas
+namespace TPF_Lopez
 {
 	public class ArbolGeneral<T>
 	{
-	
+
 		private NodoGeneral<T> raiz;
 
 		public ArbolGeneral(T dato)
@@ -31,21 +32,23 @@ namespace TrabajoFinal_Cartas
 		public List<ArbolGeneral<T>> getHijos()
 		{
 			List<ArbolGeneral<T>> temp = new List<ArbolGeneral<T>>();
-			foreach (var element in this.raiz.getHijos()) 
+			foreach (var element in this.raiz.getHijos())
 			{
 				temp.Add(new ArbolGeneral<T>(element));
 			}
 			return temp;
 		}
-		
+
 		public int altura()
 		{
-			if (this.esHoja()) {
+			if (this.esHoja())
+			{
 				return 0;
 			}
 			int h = 0;
 
-			foreach (var hijo in this.getHijos()) {
+			foreach (var hijo in this.getHijos())
+			{
 				h = Math.Max(h, hijo.altura());
 				Console.WriteLine(h + 1);
 			}
@@ -73,5 +76,5 @@ namespace TrabajoFinal_Cartas
 		}
 
 	}
-
 }
+
