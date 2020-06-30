@@ -7,17 +7,26 @@ namespace TrabajoFinal_Cartas
 {
     class NCarta
     {
-        private int carta;
         private int nuevoLimite;
-        private int victorias;
-        private bool flag;
-
+        
+        /** implementacion de las propiedades */
+        public int victorias
+	    { get; set; }
+        
+        
+        public bool flag
+	     { get; set; }
+        
+        public int carta
+	     { get; set; }
+	    
+     /** fin de las propiedades*/ 
         public NCarta() { }
-        public NCarta(int carta, bool flag)
+        public NCarta(int c, bool f)
 
         {
-            this.carta = carta;
-            this.flag = flag;
+            this.carta = c;
+            this.flag = f;
         }
 
         public NCarta(int carta, int nuevoLimite, int victorias)
@@ -28,13 +37,6 @@ namespace TrabajoFinal_Cartas
             this.victorias = victorias;
         }
 
-        public int GetCarta()
-        {
-            get{
-                return carta; //No funciona "El nombre get no existe en el contexto actual"
-            }
-            
-        }
 
     }
 }
