@@ -1,10 +1,8 @@
-﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 
-namespace juegoIA
+namespace TPF_Lopez
 {
 
 	public class HumanPlayer : Jugador
