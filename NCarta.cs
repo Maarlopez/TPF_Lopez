@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TrabajoFinal_Cartas
+namespace TPF_Lopez
 {
     class NCarta
     {
         private int nuevoLimite;
-        
+
         /** implementacion de las propiedades */
         public int victorias
-	    { get; set; }
-        
-        
+        { get; set; }
+
+
         public bool flag
-	     { get; set; }
-        
+        { get; set; }
+
         public int carta
-	     { get; set; }
-	    
-     /** fin de las propiedades*/ 
+        { get; set; }
+
+        /** fin de las propiedades*/
         public NCarta() { }
         public NCarta(int c, bool f)
 
@@ -37,6 +37,25 @@ namespace TrabajoFinal_Cartas
             this.victorias = victorias;
         }
 
+        public int getVictoria()
+        {
+            return victorias;
+        }
+
+        public int getLimite()
+        {
+            return nuevoLimite;
+        }
+
+        public int getCarta()
+        {
+            return carta;
+        }
+
+        /*public void ActualizarLimite(int limite)
+        {
+            nuevoLimite = limite;
+        }*/
 
     }
 }
