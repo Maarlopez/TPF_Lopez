@@ -1,15 +1,13 @@
-﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TPF_Lopez;
 
-namespace juegoIA
+namespace TPF_Lopez
 {
 
 	public class Game
 	{
-		public static int WIDTH = 12;
+		public static int WIDTH = 12; //Cantidad de cartas
 		public static int UPPER = 35;
 		public static int LOWER = 25;
 		
@@ -45,23 +43,22 @@ namespace juegoIA
 			Console.WriteLine("Limite:" + limite.ToString());
 		}
 		
-		private void turn(Jugador jugador, Jugador oponente, List<int> naipes)
+		private void turno(Jugador jugador, Jugador oponente, List<int> naipes)
 		{
-			int carta = jugador.descartarUnaCarta();
-			naipes.Remove(carta);
-			limite -= carta;
-			oponente.cartaDelOponente(carta);
+			int carta = jugador.descartarUnaCarta(); // Jugador actual descarta una carta
+			naipes.Remove(carta); //Remueve la carta
+			limite -= carta; //A limite le resto carta
+			oponente.cartaDelOponente(carta); //aun no hace nada
 			juegaHumano = !juegaHumano;
 		}
-		
 		
 		
 		private void printWinner()
 		{
 			if (!juegaHumano) {
-				Console.WriteLine("Gano el Ud");
+				Console.WriteLine("Gano Ud");
 			} else {
-				Console.WriteLine("Gano Computer");
+				Console.WriteLine("Gan IA");
 			}
 			
 		}
@@ -75,15 +72,14 @@ namespace juegoIA
 		{
 			while (!this.fin()) {
 				this.printScreen();
-				this.turn(player2, player1, naipesHuman); // Juega el usuario
+				this.turno(player2, player1, naipesHuman); // Juega el usuario
 				if (!this.fin()) {
 					this.printScreen();
-					this.turn(player1, player2, naipesComputer); // Juega la IA
+					this.turno(player1, player2, naipesComputer); // Juega la IA
 				}
 			}
 			this.printWinner();
 		}
-		
-		
+
 	}
 }
