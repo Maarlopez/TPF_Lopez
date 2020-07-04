@@ -1,7 +1,6 @@
-﻿
 using System;
 
-namespace juegoIA
+namespace TPF_Lopez
 {
 	class Juego
 	{
