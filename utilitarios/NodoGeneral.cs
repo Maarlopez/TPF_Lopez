@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TrabajoFinal_Cartas
+namespace TPF_Lopez
 {
 	/// <summary>
 	/// Description of NodoGeneral.
