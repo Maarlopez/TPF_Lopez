@@ -51,11 +51,5 @@ namespace TPF_Lopez
         {
             return carta;
         }
-
-        /*public void ActualizarLimite(int limite)
-        {
-            nuevoLimite = limite;
-        }*/
-
     }
 }
