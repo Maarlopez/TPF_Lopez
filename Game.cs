@@ -84,20 +84,6 @@ namespace TPF_Lopez
 				}
 			}
 			this.printWinner();
-			if (this.fin())
-			{
-				Console.WriteLine("\n¿Desea jugar de nuevo? (si/no)");
-                string reinicio = Console.ReadLine();
-				if (reinicio == "si")
-                {
-					Console.Clear();
-					Game game = new Game();
-					game.play();
-					Console.ReadKey();
-				}
-
-			}
 		}
-
-	}
+    }
 }
