@@ -18,14 +18,14 @@ namespace TPF_Lopez
 		{
 			foreach (var elem in oponente)
 			{
-				NCarta dato = new NCarta { carta = elem.carta, flag = elem.flag };
-				ArbolGeneral<NCarta> nodo = new ArbolGeneral<NCarta>(dato);
-				raiz.agregarHijo(nodo);
-				if (limite - dato.carta < 0)
+				NCarta dato = new NCarta { carta = elem.carta, flag = elem.flag }; 
+				ArbolGeneral<NCarta> nodo = new ArbolGeneral<NCarta>(dato); //creo un nuevo nodo con un dato dentro
+				raiz.agregarHijo(nodo); //agrego nodo como raíz del arbol
+				if (limite - dato.carta < 0) //Si el límite menos el valor de la carta jugada es menor a 0
 				{
-					if (!dato.flag)
+					if (!dato.flag) // 
 					{
-						dato.victorias++;
+						dato.victorias++; //
 					}
 				}
 				else
@@ -43,14 +43,13 @@ namespace TPF_Lopez
 
 		public override void incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
+				
 			this.limite = limite;
-			Console.Write("El límite actual es:", limite); //imprimo en pantalla el límite inicial.
-
-
-			//Dado un conjunto de jugadas imprimir todos los posibles resultados.
-			//Dada una profundidad imprimir las jugadas a dicha profundidad.
+			Console.Write("*******************************"); // AGREGADO
+			Console.Write("\nEl límite actual es:", limite); //MODIFICADO
 
 			ArmoArbol(Victorias, AgregarNodo(cartasPropias, true), AgregarNodo(cartasOponente, false), limite);
+			
 		}
 
 		private List<NCarta> AgregarNodo(List<int> listaCartas, bool flag)
@@ -63,6 +62,10 @@ namespace TPF_Lopez
 			}
 			return listaNodos;
 		}
+
+
+		//Dado un conjunto de jugadas imprimir todos los posibles resultados.
+		//Dada una profundidad imprimir las jugadas a dicha profundidad.
 
 		public override int descartarUnaCarta()
 		{
@@ -91,6 +94,7 @@ namespace TPF_Lopez
 					break;
 				}
 			}
+		
 		}
 	}
 }
