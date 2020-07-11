@@ -35,8 +35,7 @@ namespace TPF_Lopez
 			player2.incializar(naipesHuman, naipesComputer, limite);
 			
 		}
-		
-		
+
 		private void printScreen()
 		{
 			Console.WriteLine();
@@ -48,7 +47,9 @@ namespace TPF_Lopez
 			int carta = jugador.descartarUnaCarta(); // Jugador actual descarta una carta
 			naipes.Remove(carta); //Remueve la carta
 			limite -= carta; //A limite le resto carta
-			oponente.cartaDelOponente(carta); //aun no hace nada
+			Console.Write("\n*******************************"); // AGREGADO
+			Console.WriteLine("\nSe jugó la carta:" + carta); // MODIFICADO
+			oponente.cartaDelOponente(carta); 
 			juegaHumano = !juegaHumano;
 		}
 		
@@ -56,9 +57,13 @@ namespace TPF_Lopez
 		private void printWinner()
 		{
 			if (!juegaHumano) {
-				Console.WriteLine("Gano Ud");
+				Console.WriteLine("\nGano usted"); // MODIFICADO
+				//Console.WriteLine("\n¿Desea jugar de nuevo?");
+				
+
 			} else {
-				Console.WriteLine("Gan IA");
+				Console.WriteLine("\nGano la computadora"); // MODIFICADO
+				//Console.WriteLine("\n¿Desea jugar de nuevo?");
 			}
 			
 		}
@@ -79,6 +84,19 @@ namespace TPF_Lopez
 				}
 			}
 			this.printWinner();
+			if (this.fin())
+			{
+				Console.WriteLine("\n¿Desea jugar de nuevo? (si/no)");
+                string reinicio = Console.ReadLine();
+				if (reinicio == "si")
+                {
+					Console.Clear();
+					Game game = new Game();
+					game.play();
+					Console.ReadKey();
+				}
+
+			}
 		}
 
 	}
