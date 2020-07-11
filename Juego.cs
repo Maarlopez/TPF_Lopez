@@ -6,9 +6,16 @@ namespace TPF_Lopez
 	{
 		public static void Main(string[] args)
 		{
+			string reinicio ="si"
+			while(reinicio == "si"){
+				Console.Clear();
 				Game game = new Game();
 				game.play();
-			    Console.ReadKey();
+				Console.ReadKey();
+				Console.WriteLine("\n¿Desea jugar de nuevo? (si/no)");
+				reinicio = Console.ReadLine();
+			}
+
 		}
 	}
 }
