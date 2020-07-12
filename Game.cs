@@ -7,9 +7,9 @@ namespace TPF_Lopez
 
 	public class Game
 	{
-		public static int WIDTH = 12; //Cantidad de cartas
-		public static int UPPER = 35;
-		public static int LOWER = 25;
+		public static int WIDTH = 12; // Cantidad de cartas
+		public static int UPPER = 35; // LIMITE SUP
+		public static int LOWER = 25; // LIMITE INF
 		
 		private Jugador player1 = new ComputerPlayer();
 		private Jugador player2 = new HumanPlayer();
@@ -57,13 +57,10 @@ namespace TPF_Lopez
 		private void printWinner()
 		{
 			if (!juegaHumano) {
-				Console.WriteLine("\nGano usted"); // MODIFICADO
-				//Console.WriteLine("\n¿Desea jugar de nuevo?");
-				
+				Console.WriteLine("\nGano usted");
 
 			} else {
-				Console.WriteLine("\nGano la computadora"); // MODIFICADO
-				//Console.WriteLine("\n¿Desea jugar de nuevo?");
+				Console.WriteLine("\nGano la computadora");
 			}
 			
 		}
