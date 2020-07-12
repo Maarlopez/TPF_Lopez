@@ -30,7 +30,7 @@ namespace TPF_Lopez
 		public override int descartarUnaCarta()
 		{
 			int carta = 0;
-			Console.WriteLine("Naipes disponibles (Usuario):");
+			Console.WriteLine("Naipes disponibles del usuario:");
 			for (int i = 0; i < naipes.Count; i++) {
 				Console.Write(naipes[i].ToString());
 				if (i<naipes.Count-1) {
@@ -45,7 +45,7 @@ namespace TPF_Lopez
 				
 				Int32.TryParse(entrada, out carta);
 				while (!naipes.Contains(carta)) {
-					Console.Write("Opcion Invalida.Ingrese otro naipe:");
+					Console.Write("Opcion Invalida.\nIngrese otro naipe:");
 					entrada = Console.ReadLine();
 					Int32.TryParse(entrada, out carta);
 				}
