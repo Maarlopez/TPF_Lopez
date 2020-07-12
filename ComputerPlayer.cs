@@ -63,10 +63,6 @@ namespace TPF_Lopez
 			return listaNodos;
 		}
 
-
-		//Dado un conjunto de jugadas imprimir todos los posibles resultados.
-		//Dada una profundidad imprimir las jugadas a dicha profundidad.
-
 		public override int descartarUnaCarta()
 		{
 			int max = 0;
